@@ -4,6 +4,8 @@ This is the full source code (and a compiled PDF) of my PhD thesis, submitted in
 
 [A clean template of this thesis can be found here.](https://github.com/crispinagar/thesis-template)
 
+I wrote this in VS Code (with the LaTeX Workshop extension), using MiKTex as my LaTeX distribution. There was a degree of faff in the initial set up, but eventually I compiled everything using the recipe `PDFLatex >> PDFLatex >> BibTex >> PDFLatex`.
+
 Crispin Agar, 2022-05-08
 
 
