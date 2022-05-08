@@ -1,0 +1,132 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+11pt,                   % The default document font size, options: 10pt, 11pt, 12pt
+%oneside,               % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english,                % ngerman for German
+onehalfspacing,         % Single line spacing, alternatives: onehalfspacing or doublespacing
+%draft,                 % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing,         % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+%liststotoc,            % Uncomment to add the list of figures/tables/etc to the table of contents
+toctotoc,               % Uncomment to add the main table of contents to the table of contents
+%parskip,               % Uncomment to add space between paragraphs
+%nohyperref,            % Uncomment to not load the hyperref package
+headsepline,            % Uncomment to get a line under the header
+%chapterinoneline,      % Uncomment to place the chapter title next to the number on one line
+%consistentlayout,      % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+twoside,
+]{MastersDoctoralThesis} % The class file specifying the document structure
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{Preamble/commands} %Custom commands
+\usepackage{mathpazo} % Use the Palatino font by default
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+%\usepackage{gensymb} % Use if needed, but this caused dependency issues for me
+\usepackage{upgreek}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{textcomp}
+\definecolor{listinggray}{rgb}{225,224, 224}
+\definecolor{lbcolor}{rgb}{255, 255, 255}
+\lstset{
+        backgroundcolor=\color{lbcolor},
+        tabsize=4,
+        rulecolor=,
+        language=python,
+        basicstyle=\scriptsize,
+        upquote=true,
+        aboveskip={1.5\baselineskip},
+        columns=fixed,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=single,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color{myblue},
+        commentstyle=\color{mypurple},
+        stringstyle=\color{mypink},
+}
+
+\usepackage[authoryear]{natbib}
+
+\usepackage{Preamble/colourSettings}                    % colour settings
+\usepackage{Preamble/marginSettings}                    % margin settings
+\usepackage{Preamble/thesisInformation}                 % All the information about the thesis, e.g. title, author, etc.
+\usepackage{wrapfig}
+\usepackage{float}
+% ========================================================================================
+
+
+% ========================================================================================
+\begin{document}
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+% -------------------------------------------------------------------------
+% Frontmatter
+% -------------------------------------------------------------------------
+\input{Frontmatter/titlePage}                   % The title page
+\input{Frontmatter/contents}                    % Contents page(s)
+\input{Frontmatter/abstract.tex}                % Main thesis abstract
+\input{Frontmatter/declaration.tex}             % Declaration of authorship
+\input{Frontmatter/copyright.tex}               % Copyright statement
+\input{Frontmatter/preface.tex}                 % Preface (not required)
+\input{Frontmatter/acknowledgments.tex}         % Acknowledgements
+\input{Frontmatter/quotation.tex}               % Quotation page
+
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+\include{Chapters/Introduction}
+\include{Chapters/B0031_Project}
+\include{Chapters/J1926_Project}
+\include{Chapters/J1518_Project}
+\include{Chapters/J0250_Project}
+\include{Chapters/Conclusions} 
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+\include{Appendices/geometry_derivations}
+\include{Appendices/matrix_mathematics}
+\include{Appendices/atlas_results}
+\include{Appendices/A_atlas_images.tex} % Include the images as separate tex files to make the images start on a new page.
+\include{Appendices/B_atlas_images.tex}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\label{Bibliography}  % Change the left side page header to "Bibliography"
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{mnras}  % Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\setlength{\bibsep}{3pt}
+\bibliography{FINALBIBFILE}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}  

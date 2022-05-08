@@ -1,0 +1,271 @@
+% Temporary appendix for the B0031 chapter
+
+\chapter{TEMPORARY B0031 APPENDIX} % Main appendix title
+\label{app: TEMP B0031 APPENDIX}
+
+\section{Cartographic transform}
+\label{app: B0031temp - cartographic transform}
+\citet{DRxx2001} published a set of equations that map observed emission as a function of time to an image of the beam pattern which circulates around the magnetic axis. Here time is quantified by a pulse number $k$ and pulse longitude $\phi$ and these are related to polar coordinates co-rotating with the carousel centred on the magnetic axis, thereby producing an image of the pulsar beam with a stationary carousel. One can apply the cartographic transform to a $P_3$-fold by relating the integer $k$ cyclically to the phase in the modulation cycle (i.e. the y-axis of Fig.~\ref{fig: B0031 - observed OPMs}). At a given time radiation is observed which is emitted in a direction which makes an angle $R$ with respect to the magnetic axis (polar angle), and azimuthal angle $\Theta$ in the beam map.
+
+If the circulation time $P_4$ is set to the rotation period of the carousel, then the frame is corotating with the beamlets such that their associated azimuthal angles remain constant. The transforms can be written as
+\begin{equation}
+    \label{eq: cartographic transform - R}
+    \sin^2\bigg(\frac{R}{2}\bigg) = \sin^2\bigg(  \frac{\Delta\phi}{2} \bigg)\sin(\alpha)\sin(\zeta) + \sin^2\bigg(\frac{\beta}{2} \bigg),
+\end{equation}
+\begin{equation}
+    \label{eq: cartographic transform - Theta}
+    \Theta = \theta_\mathrm{trans} + \theta_\mathrm{rot},
+\end{equation}
+    where
+\begin{equation}
+    \label{eq: cartographic transform - sin theta_trans}
+    \sin(\theta_\mathrm{trans}) = \frac{\sin(\zeta)\sin(\Delta\phi)}{\sin(R)},
+\end{equation}
+\begin{equation}
+    \label{eq: cartographic transform - cos theta_trans}
+    \cos(\theta_\mathrm{trans}) = \frac{\cos(\alpha)\cos(R) - \cos(\zeta)}{\sin(\alpha)\sin(R)},
+\end{equation}
+    and
+\begin{equation}
+    \label{eq: cartographic transform - theta_rot}
+    \theta_\mathrm{rot} =  \pm\bigg(2\pi k + \Delta\phi\bigg)\frac{P_1}{P_4}.
+\end{equation}
+
+In these equations, $\Delta\phi = \phi - \phi_\mathrm{fid}$, where $\phi_\mathrm{fid}$ is the pulse longitude corresponding to the fiducial plane, the plane which contains the magnetic and rotation axes. The inclination of the magnetic axis with respect to the rotation axis is $\alpha$, $\beta$ is the impact parameter of the observer's line of sight (LOS) with respect to the magnetic axis, and $\zeta = \alpha + \beta$. The changing orientation of the LOS with respect to the magnetic axis is quantified with $\theta_\mathrm{trans}$ and the rotation of the carousel is quantified with $\theta_\mathrm{rot}$. The period of rotation of the carousel is $P_4$ and $P_1$ is the rotation period of the star. 
+
+Care needs to be taken to avoid confusion with signs. Both $P_4$ and $P_3$ we define as positive quantities, as they are time periods. $\Theta$ is defined such that it is increasing in a clockwise direction as seen by the observer if $\alpha$ is defined with respect to the angular momentum vector\footnote{This is true both in a frame co-rotating with the star, and a frame co-rotating with the carousel.}. This implies that if $\alpha$ is derived from the RVM, care must be taken in defining the direction of the PA consistently \citep[see][]{EWxx2001}. At $\phi = \phi_\mathrm{fid}$ for $k = 0$, emission directed at an angle of $\Theta = 0$ is observed.
+
+The sign in Eq.\eqref{eq: cartographic transform - theta_rot} defines the direction of rotation of the carousel. For a carousel which circulates in the same direction as the pulsar rotates (but lagging co-rotation as predicted by \citep{RSxx1975}), the $(-)$ sign applies for a carousel in the Northern rotational hemisphere (i.e. if $\alpha < 90\degr$) while the $(+)$ sign applies for a carousel in the Southern hemisphere ($\alpha > 90\degr$).  When creating a beam map, it is necessary to do some form of interpolation to map the observed emission which is only visible once per rotation to a rectangular grid of points in the beam map -- the method used in this work is bilinear interpolation.
+
+
+
+
+
+
+
+
+\section{Cartographic transform and aliasing}
+\label{app: B0031temp - carousel aliasing}
+
+For slowly rotating carousels, the observed modulation period $P_3$ is equivalent to the time it takes for a sub-beam in the carousel to drift round to the position of its neighbour. As discussed in detail by \citet{GGKS2004}, in the case of fast drift the measured value $P_3$ can be larger than the true time $P_3^t \equiv P_4/N$ it takes for the carousel to drift by one sub-beam separation. This is due to aliasing, the consequence of the drift pattern being sampled once per rotation period $P_1$ of the star, which occurs when $P_3^t < 2P_1$. The relation between the observed and actual drift of the carousel depends on the alias order $n$ (a non-negative integer) such that for odd $n$ the apparent drift direction is opposite to the true drift direction. The apparent $P_3$ is related to the actual circulation period of the carousel via
+\begin{equation}
+    \label{eq: aliasing equation P3}
+    \frac{s}{P_1} + \frac{(-1)^n}{P_3} = \frac{1}{P_3^t} = \frac{N}{P_4},
+\end{equation}
+where $s = \text{int}[(n+1)/2]$ (here int is the function which returns the integer part of its argument). We define all variables in Eq.~\eqref{eq: aliasing equation P3} to be positive since the carousel drift direction is described by the sign modifier discussed in Appendix~\ref{app: B0031temp - cartographic transform}. The sign modifier is defined in terms of the actual drift direction rather than the perceived drift direction. The equations in Appendix~\ref{app: B0031temp - cartographic transform} remain valid in the case of aliasing, except that $P_4$ is related to the observed $P_3$ via Eq.~\eqref{eq: aliasing equation P3}.
+
+
+\section{Symmetry in the \texorpdfstring{$P_3$}{P3}-fold}
+\label{app: B0031temp - P3-fold symmetry}
+
+Since the cartographic transform is periodic, the emission from a given set of coordinates ($R$, $\Theta$) is observable at different times as parametrised by coordinates in the pulse stack or $P_3$-fold ($\phi$, $k$). Particularly relevant here is that coordinates ($R$, $\Theta$) map to two different pulse longitudes $\phi_1$ and $\phi_2$ which are related such that
+\begin{equation}
+    \label{eq:points1}
+    \phi_2 = 2\phi_\mathrm{fid} - \phi_1.
+\end{equation}
+This equation shows that the fiducial plane lies exactly in between these longitudes. The LOS can intersect the same point in the carousel at longitudes $\phi_1$ and $\phi_2$ at different pulse numbers $k_1$ and $k_2$ such that
+\begin{equation}
+    \label{eq:points2}
+    k_2 = k_1 + \Delta k + n_\mathrm{arb}\frac{P_4}{P_1},
+\end{equation}
+where $n_\mathrm{arb}$ is an arbitrary integer and
+\begin{equation}
+    \label{eq:points3}
+    \Delta k = \frac{1}{2\pi}\bigg[\phi_1 - \phi_2 \pm \frac{P_4}{P_1}\big(\theta_\mathrm{trans}(\phi_1) - \theta_\mathrm{trans}(\phi_2)\big)\bigg].
+\end{equation}
+In Eq.~\eqref{eq:points3} the sign convention is the same as in Eq.~\eqref{eq: cartographic transform - theta_rot}. Note that only if $k_2 - k_1$ is an integer the exact same point $(R,\ \Theta)$ in the carousel is observable at two different times.
+
+In the case of a $P_3$-fold, where $k$ is cyclically related to a phase in the modulation cycle, a difference in $k$ can similarly be related to an offset in modulation cycle phase $\Phi$. Under the assumption that the sub-beam pattern is static apart from its circulation, the corresponding pairs of points in the $P_3$-fold are expected to have identical emission properties, although the position angle could have rotated, possibly following the prediction of the RVM. These effects are however removed from the data in the process of separating the OPMs (Sec.~\ref{sec: B0031 - methods - mode separation}).
+
+The modulation pattern in the pulse stack is cyclic over a period $P_4/(NP_1)$. This period can be less than $2P_1$ if aliased drifting subpulses are observed, in which case the apparent drift direction changes sign with alias order (quantified by $(-1)^n$ in Eq.~\eqref{eq: aliasing equation P3}), which will affect the sign of the drift rate in the observed $P_3$-fold. So Eq.~\eqref{eq:points2} can be modified to
+\begin{equation}
+    \label{eq: P3 fold phase}
+    \Phi_2 = \Phi_1 + (-1)^n\frac{2\pi N P_1}{P4}\Delta k
+\end{equation}
+when $P_3$-folds are considered. Eq. \eqref{eq: P3 fold phase} can be differentiated with respect to $\phi$ to give an equation for the gradient of the driftband. At the fiducial plane longitude, $\phi = \phi_\mathrm{fid}$, this gradient is
+\begin{equation}
+    \label{eq: drift band gradient}
+    m = \dphi{\Phi}\bigg|_{\phi_\mathrm{fid}} = -\frac{(-1)^nNP_3}{2\pi}\bigg(\frac{1}{P_4} \pm \frac{\sin(\alpha + \beta)}{\sin(\beta)}\bigg)
+\end{equation}
+When a grid search over pulsar geometry parameter space is performed, it can be desirable to define the grid in terms of $m$ rather than $\beta$.
+
+
+\section{Accounting for unmodulated emission}
+\label{app: B0031temp - accounting for unmodulated emission}
+
+There is power in the $P_3$-folds which is associated with unmodulated (or stochastically varying) emission rather than drifting subpulses. This additional power can be incorporated in Eqs.~\eqref{eq: definition of the mixing matrix} and \eqref{eq: definition of the asymmetry matrix} by including a background term which is constant with respect to phase in the modulation cycle, but varying in pulse longitude such that
+\begin{align}
+    \label{eq: mixing matrix with background term}
+    \mathbf{O^l} &= \mathbf{M^lI}+\langle\mathbf{O^l}\rangle,\\
+    \mathbf{O^t} &= \mathbf{M^tI}+\langle\mathbf{O^t}\rangle.
+\end{align}
+Here $\mathbf{I}$ is the intrinsic intensity associated with the symmetric circulating pattern. Under the action of the magnetosphere the observed intensities $\mathbf{O^l}$ and $\mathbf{O^t}$ are modified as described by the mixing matrix. The circulation of the sub-beams results in a variable intensity. Since the unmodulated emission is not necessarily the result of circulation only, it is not assumed that it is identical at opposite sides of $\phi_\mathrm{fid}$. The final terms in the equations above are the average observed intensities, which are a function of pulse longitude. These equations imply that $\mathbf{I}$ describes the circulating pattern in terms of a deviation from an average background as quantified by the last terms.
+
+Demanding that the intrinsic intensities are identical when the two corresponding points in the leading and trailing halves of the $P_3$-fold are considered leads to a modification of Eq.\eqref{eq: matching leading and trailing observed OPMs} such that
+\begin{equation}
+    \label{eq: matching leading and trailing observed OPMs with background term}
+    \mathbf{O^l}-\langle\mathbf{O^l}\rangle = \mathbf{A}(\mathbf{O^t} - \langle\mathbf{O^t}\rangle),
+\end{equation}
+where $\mathbf{A} = \mathbf{M^l}(\mathbf{M^t})^{-1}$, as defined in Eq.~\eqref{eq: definition of the asymmetry matrix}. This shows that the unmodulated emission can simply be subtracted from the $P_3$-fold before performing a fit for $\mathbf{A}$, as this results in an equation which has the same form as Eq.~\eqref{eq: matching leading and trailing observed OPMs}, and that $\mathbf{A}$ is the same in both equations. This shows that subtracting the mean intensity at each pulse longitude from the data successfully removes the effect of an unmodulated component to the emission, and that the fitting of $\mathbf{A}$ obtained describes how the circulating power is affected by the magnetosphere.
+
+
+\section{Physical constraints on the mixing matrix}
+\label{app: B0031temp - physical constraints}
+
+For the mixing matrix to be considered physical, its four elements should be positive (or zero), a requirement stemming from the fact that the intensities cannot be negative. Previously, separate matrices for the leading and trailing halves have been discussed -- these may be written in full as
+\begin{align}
+    \mathbf{M^l} &= \begin{pmatrix} a&b\\c&d\end{pmatrix},\\
+    \mathbf{M^t} &= \begin{pmatrix} e&f\\g&h\end{pmatrix},
+\end{align}
+where the superscripts $l$ and $t$ denote the leading and trailing halves respectively. Explicitly, these two matrices are constrained by
+\begin{equation}
+    \label{eq: positive matrix elements}
+    a,b,c,d,e,f,g,h \geq 0.
+\end{equation}
+The fitting process constrains the asymmetry matrix (Eq.~\eqref{eq: definition of the asymmetry matrix}), rather than the mixing matrices. It is therefore desirable to test for a given determined matrix $\mathbf{A}$ if a solution exists which obeys Eq.~\eqref{eq: positive matrix elements}. In other words, we would like to relate the inequalities given by Eq.~\eqref{eq: positive matrix elements} to a set of requirements on the matrix elements of $\mathbf{A}$. According to Eq.~\eqref{eq: definition of the asymmetry matrix},
+\begin{equation}
+    \label{eq: constraints on the asymmetry matrix}
+    \begin{pmatrix} A_{11}&A_{12}\\A_{21}&A_{22}\end{pmatrix}\begin{pmatrix} a&b\\c&d\end{pmatrix} = \begin{pmatrix} e&f\\g&h\end{pmatrix}.
+\end{equation}
+Recognising that the requirements of each element of $\mathbf{M^l}$ and $\mathbf{M^t}$ is the same, the full requirement as given by Eq.~\eqref{eq: positive matrix elements} will be satisfied if the following simpler relation is satisfied:
+\begin{equation}
+    \label{eq: simpler constraints on the asymmetry matrix}
+    \begin{pmatrix} A_{11}&A_{12}\\A_{21}&A_{22}\end{pmatrix}\begin{pmatrix} a\\c\end{pmatrix} = \begin{pmatrix} e\\g\end{pmatrix}.
+\end{equation}
+
+The question to be solved here is that for given values $A_{ij}$, do positive values of $a$ and $c$ exist such that
+\begin{align}
+    A_{11}a + A_{12}c &\geq 0\\
+    A_{21}a + A_{22}c &\geq 0?
+\end{align}
+Given that $a$ and $c$ must be positive, this can equally well be expressed as the requirements
+\begin{align}
+    A_{11}x + A_{12} &\geq 0\label{eq: reduced asymmetry constraint 1}\\
+    A_{21}x + A_{22} &\geq 0,\label{eq: reduced asymmetry constraint 2}
+\end{align}
+where $x = a/c$ is constrained to be non-negative. Two constraints are immediately obvious from these two requirements: no non-negative values of $x$ exist to satisfy Eqs.~\eqref{eq: reduced asymmetry constraint 1} and \eqref{eq: reduced asymmetry constraint 2} if either
+\begin{equation}
+    \label{eq: constraint 1}
+    A_{11} < 0\text{ and }A_{12} < 0,
+\end{equation}
+    or
+\begin{equation}
+    \label{eq: constraint 2}
+    A_{21} < 0\text{ and }A_{22} < 0.
+\end{equation}
+    
+Eqs.~\eqref{eq: reduced asymmetry constraint 1} and \eqref{eq: reduced asymmetry constraint 2} need to be simultaneously satisfied, and these requirements can be combined in a single condition. To do the combinations, different signs of the coefficients need to be considered separately. There are four cases to consider:
+\begin{enumerate}
+    \item $A_{11} \geq 0$ and $A_{21} \geq 0$;
+    \item $A_{11} \geq 0$ and $A_{21} < 0$;
+    \item $A_{11} < 0$ and $A_{21} \geq 0$;
+    \item $A_{11} < 0$ and $A_{21} < 0$.
+\end{enumerate}
+
+\subsection*{Case (i): $A_{11} \geq 0$ and $A_{21} \geq 0$}
+In this case Eqs.~\eqref{eq: reduced asymmetry constraint 1} and~\eqref{eq: reduced asymmetry constraint 2} can be written as
+\begin{align}
+    \frac{A_{12}}{A_{11}} \geq -x; \label{eq: case 1-1}\\
+    \frac{A_{22}}{A_{21}} \geq -x.\label{eq: case 1-2}
+\end{align}
+For any value of $x$ which is large enough ($x$ is only constrained to be positive), these inequalities will be satisfied. So all values $A_{ij}$ are potentially physical in this case.
+
+\subsection*{Case (ii): $A_{11} \geq 0$ and $A_{21} < 0$}
+Because of constraint \eqref{eq: constraint 2}, $A_{22}$ must be positive. Now, Eqs.~\eqref{eq: reduced asymmetry constraint 1} and~\eqref{eq: reduced asymmetry constraint 2} become
+\begin{align}
+    x \geq - \frac{A_{12}}{A_{11}}; \label{eq: case 2-1} \\ 
+    x \leq - \frac{A_{22}}{A_{21}},\label{eq: case 2-2}
+\end{align}
+which can be combined to give
+\begin{align}
+    - \frac{A_{12}}{A_{11}} &\leq x \leq - \frac{A_{22}}{A_{21}},\\
+    - \frac{A_{12}}{A_{11}} &\leq - \frac{A_{22}}{A_{21}},
+\end{align} 
+Multiplying through by $A_{11}A_{21}$ which is negative gives
+\begin{equation}
+    A_{11}A_{22} -A_{12}A_{21} \geq 0.
+\end{equation}
+
+\subsection*{Case (iii): $A_{11} < 0$ and $A_{21} \geq 0$}
+In this case, Eqs.~\eqref{eq: reduced asymmetry constraint 1} and~\eqref{eq: reduced asymmetry constraint 2} become
+\begin{align}
+    x \leq - \frac{A_{12}}{A_{11}}; \label{eq: case 3-1}\\
+    x \geq - \frac{A_{22}}{A_{21}},\label{eq: case 3-2}
+\end{align}
+and physical solutions could exist as long as
+\begin{equation}
+    A_{12}A_{21} -A_{11}A_{22} \geq 0.
+\end{equation}
+
+\subsection*{Case (iv): $A_{11} < 0$ and $A_{21} < 0$}
+Finally in this case,
+\begin{align}
+    \frac{A_{12}}{A_{11}} \ge - x; \label{eq: case 4-1}\\
+    \frac{A_{22}}{A_{21}} \geq -x. \label{eq: case 4-2}
+\end{align}
+By noting that conditions \eqref{eq: constraint 1} and \eqref{eq: constraint 2} imply that $A_{12} \geq 0$ and $A_{22} \geq 0$, and hence the two requirements found for this case can be satisfied by having any (positive) value of $x$ which is sufficiently close to zero.
+
+\subsection*{Summary of requirements}
+The constraints resulting from cases (i) and (iv) imply that the requirements $x$ can be satisfied for all cases where $A_{11}$ and $A_{21}$ have the same sign. The cases where they have opposite sign, (ii) and (iii), may be combined into one single requirement. In summary, together with Eqs.~\eqref{eq: reduced asymmetry constraint 1} and \eqref{eq: reduced asymmetry constraint 2}, this gives the following three requirements on $\mathbf{A}$ which all have to be met to allow physical solutions to exist:
+\begin{enumerate}
+    \item $A_{11}$ and $A_{12}$ are not both negative;
+    \item $A_{21}$ and $A_{22}$ are not both negative
+    \item $A_{11}A_{21} \geq 0$ OR $|A_{11}|A_{22} + A_{12}|A_{21}| \geq 0$.
+\end{enumerate}
+
+
+
+\section{Method for constraining the mixing matrix \texorpdfstring{$\mathbf{M}$}{\textbf{M}} from the fitted matrix \texorpdfstring{$\mathbf{A}$}{\textbf{A}}}
+\label{app: B0031temp - posmatrix explanation}
+
+The fitted asymmetry matrix $\mathbf{A}$ is a degenerate combination of the underlying mixing matrix $\mathbf{M}$ for the leading and trailing halves of the profile, $\mathbf{M^l}$ and $\mathbf{M^t}$ respectively, as shown in Eq.~\eqref{eq: definition of the asymmetry matrix}. It is the mixing matrix which describes how the magnetosphere affects the intrinsic OPMs at a given pulse longitude, and therefore in order to recover $I_1$ and $I_2$ $\mathbf{A}$ needs to be broken down into $\mathbf{M}$ for each pulse longitude.
+
+There are requirements that $\mathbf{M}$ must satisfy in order to be physical: specifically all its elements must be greater than or equal to zero, as explained in Appendix \ref{app: B0031temp - physical constraints}. Given an asymmetry matrix, the mixing matrices found in the leading and trailing halves are related by $\mathbf{AM^t}=\mathbf{M^l}$. The two columns $j$ of $\mathbf{M}$ are independent, so they can be resolved simultaneously;
+\begin{equation}
+    \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix} \begin{pmatrix} M^t_{1j} \\ M^t_{2j} \end{pmatrix} = \begin{pmatrix} M^l_{1j} \\ M^l_{2j} \end{pmatrix},
+\end{equation}
+where all $M_{ij}\geq 0$. This is the same process as in Appendix \ref{app: B0031temp - physical constraints}: there are two equations to resolve;
+\begin{align}
+    A_{11}x + A_{12} \geq 0,\label{eq: reduced asymmetry constraint 1.2}\\
+    A_{21}x + A_{22} \geq 0,\label{eq: reduced asymmetry constraint 2.2}
+\end{align}
+where the goal is now to find what range of values $x$ can take, which in turn describes the range of values that the elements of $\mathbf{M^t}$ can take. Once again we can consider different cases to define the range, between $x_\mathrm{min}$ and $x_\mathrm{max}$. These cases and their resultant values of $x_\mathrm{min}$ and $x_\mathrm{max}$ are shown in  Tab.~\ref{tab: asymmetry constraint cases}.
+\begin{table}
+    \caption[B0031 Geometry constraints TEMP]{The four possible cases for Eqs.~\eqref{eq: reduced asymmetry constraint 1.2} and \eqref{eq: reduced asymmetry constraint 2.2} which depend on the signs of the matrix elements $A_{ij}$, and the limits each of these place on $x$.}
+    \label{tab: asymmetry constraint cases}
+    \begin{tabular}{cccc}
+        \hline
+        Case 							& Inequalities 									& $x_\mathrm{min}$ 							& $x_\mathrm{max}$ \\
+        \hline
+        $A_{11}\geq0$, $A_{21}\geq0$	& $x\geq-A_{12}/A_{11}$; $x\geq-A_{22}/A_{21}$ 	& max($-A_{12}/A_{11}$,$-A_{22}/A_{21}$)	& No maximum value                			\\
+        $A_{11}\geq0$, $A_{21}<0$    	& $x\geq-A_{12}/A_{11}$; $x\leq-A_{22}/A_{21}$ 	& $-A_{12}/A_{11}$							& $-A_{22}/A_{21}$                          \\
+        $A_{11}<0$, $A_{21}\geq0$    	& $x\leq-A_{12}/A_{11}$; $x\geq-A_{22}/A_{21}$ 	& $-A_{22}/A_{21}$							& $-A_{12}/A_{11}$                          \\
+        $A_{11}<0$, $A_{21}<0$       	& $x\leq-A_{12}/A_{11}$; $x\leq-A_{22}/A_{21}$ 	& 0											& min($-A_{12}/A_{11}$,$-A_{22}/A_{21}$)
+    \end{tabular}
+\end{table}
+We are free to scale the column in $\mathbf{M}$ in any way, as long as the intrinsic OPMs are also scaled accordingly --- this is one of the degeneracies in this process as discussed in Sec.~\ref{sec: B0031 - methods - calculating intrinsic emission}. Therefore the choice is made to scale $x$ such that the quadrature sum of elements in a column is one. The scaled range between $\Tilde{x}_\mathrm{min}$ and $\Tilde{x}_\mathrm{max}$ becomes
+\begin{align}
+    \Tilde{x}_\mathrm{min} = \frac{x_\mathrm{min}}{\sqrt{x_\mathrm{min}^2 + 1}}\\
+    \Tilde{x}_\mathrm{max} = \frac{x_\mathrm{max}}{\sqrt{x_\mathrm{max}^2 + 1}}. 
+\end{align}
+The elements of the trailing half mixing matrix $\mathbf{M^t}$ are then set by
+\begin{align}
+    M_{11}^t &= \Tilde{x}_\mathrm{min} + \frac{l}{2}(\Tilde{x}_\mathrm{max} - \Tilde{x}_\mathrm{min})\label{eq: Mt11 level}\\
+    M_{21}^t &= \sqrt{1-(M_{11}^t)^2}\label{eq: Mt12 level}\\
+    M_{12}^t &= \Tilde{x}_\mathrm{min} + \bigg(1-\frac{l}{2}\bigg)(\Tilde{x}_\mathrm{max} - \Tilde{x}_\mathrm{min})\label{eq: Mt21 level}\\
+    M_{22}^t &= \sqrt{1-(M_{12}^t)^2}\label{eq: Mt22 level},
+\end{align}
+where $l$ is a ``level parameter'' between 0 and 1 which picks out a value in the range $\Tilde{x}_\mathrm{min} \leq \tilde{x} \leq \Tilde{x}_\mathrm{max}$. The trailing half mixing matrix can then be found from $\mathbf{M^l}=\mathbf{AM^t}$.
+
+In Eqs.~\eqref{eq: Mt11 level}--\eqref{eq: Mt22 level} the level parameter $l$ also has the effect of determining how similar the two columns of $\mathbf{M^t}$ are. Setting the level to 0 means that the columns are as different as it is possible for them to be (given the range of $x$), and conversely setting the level to 1 makes them identical.
+
+
+When calculating the intrinsic OPMs it is necessary to invert the mixing matrix, as $\mathbf{I}=(\mathbf{M})^{-1}\mathbf{O}$. Small variations in the determinant of $\mathbf{M}$ as it between pulse longitudes can therefore lead to large variations in the intensity of $I_1$ and $I_2$. To avoid this, we again exploit the degeneracy of an overall scaling and normalise the mixing matrix at each pulse longitude independently, such that the quadrature sum of the determinants of corresponding pairs $\mathbf{M^l}$ and $\mathbf{M^l}$  is one, i.e.
+\begin{equation}
+    \widetilde{\mathbf{M}} = \frac{\mathbf{M}}{\sqrt{\det(\mathbf{M^l})^2 + \det(\mathbf{M^t})^2}}.
+\end{equation}
+
+
+
+
+

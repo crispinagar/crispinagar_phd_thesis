@@ -1,0 +1,228 @@
+\chapter[Matrix mathematics]{Mathematics pertaining to the mixing matrix of Chapter~\ref{chapt: B0031}}
+\label{app: matrix maths}
+
+This appendix contains a more detailed description of mathematics related to the mixing matrix of Chapter~\ref{chapt: B0031}. Here it is explained why the mean intensity can be subtracted from each pulse longitude in the $P_3$-fold in order to account for unmodulated emission. Physical constraints on the mixing matrices $\mathbf{M}$ are discussed, and it is shown how these can translate to constraints on the fitted asymmetry matrix $\mathbf{A}$.
+
+
+
+
+
+
+
+
+\section{Accounting for unmodulated emission}
+\label{app: matrix maths - accounting for unmodulated emission}
+
+
+There is power in the $P_3$-folds which is associated with unmodulated (or stochastically varying) emission rather than drifting subpulses. This additional power can be incorporated in Eqs.~\eqref{eq: definition of the mixing matrix} and \eqref{eq: definition of the asymmetry matrix} by including a background term which is constant with respect to modulation phase, but varying in pulse longitude such that
+\begin{align}
+    \label{eq: mixing matrix with background term}
+    \mathbf{O}^l &= \mathbf{M}^l\mathbf{I}+\langle\mathbf{O}^l\rangle,\\
+    \mathbf{O}^t &= \mathbf{M}^t\mathbf{I}+\langle\mathbf{O}^t\rangle,
+\end{align}
+where the superscripts $l$ and $t$ denote the leading and trailing halves respectively. Here $\mathbf{I}$ is the intrinsic intensity associated with the symmetric circulating pattern. Under the action of the magnetosphere the observed intensities $\mathbf{O}^l$ and $\mathbf{O}^t$ are modified as described by the mixing matrix. The circulation of the sub-beams results in a periodically varying observed intensity. Since the unmodulated emission is not circulating, it is not assumed that it is identical at opposite sides of $\phi_\mathrm{fid}$. The last terms in the equations above are the average observed intensities, which are a function of pulse longitude. These equations imply that $\mathbf{I}$ describes the circulating pattern in terms of a deviation from an average background.
+
+Demanding that the intrinsic intensities are identical when the two corresponding points in the leading and trailing halves of the $P_3$-fold are considered leads to a modification of Eq.~\eqref{eq: matching leading and trailing observed OPMs} such that
+\begin{equation}
+    \label{eq: matching leading and trailing observed OPMs with background term}
+    \mathbf{O}^l-\langle\mathbf{O}^l\rangle = \mathbf{A}(\mathbf{O}^t - \langle\mathbf{O}^t\rangle),
+\end{equation}
+where $\mathbf{A} = \mathbf{M}^l(\mathbf{M}^t)^{-1}$, as defined in Eq.~\eqref{eq: definition of the asymmetry matrix}. This shows that the unmodulated emission can simply be subtracted from the $P_3$-fold before performing a fit for $\mathbf{A}$, as this results in an equation which has the same form as Eq.~\eqref{eq: matching leading and trailing observed OPMs}. By subtracting the mean intensity at each pulse longitude from the data successfully removes the effect of an unmodulated component to the emission, such that the matrix $\mathbf{A}$ obtained from fitting describes how the circulating power is affected by the magnetosphere.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Applying physical constraints on the asymmetry matrix}
+\label{app: matrix maths - physical constraints}
+
+For the mixing matrix to be considered physical its four elements should be nonnegative, a requirement which stems from the fact that the intensities themselves cannot be negative. Previously, separate matrices for the corresponding longitudes at both sides of $\phi_\mathrm{fid}$ have been discussed -- these may be written in full as
+\begin{align}
+    \mathbf{M}^t &= \begin{pmatrix} a&b\\c&d\end{pmatrix},\\
+    \mathbf{M}^l &= \begin{pmatrix} e&f\\g&h\end{pmatrix}.
+\end{align}
+Explicitly, these two matrices are constrained by
+\begin{equation}
+    \label{eq: matrix maths - positive matrix elements}
+    a,b,c,d,e,f,g,h \geq 0.
+\end{equation}
+
+The fitting process constrains the asymmetry matrix (Eq.~\eqref{eq: definition of the asymmetry matrix}), rather than the mixing matrices, and as discussed degenerate solutions for the mixing matrix exist. It is therefore desirable to test whether for a given matrix $\mathbf{A}$ obtained by fitting if physically acceptable mixing matrices exist, which obey Eq.~\eqref{eq: matrix maths - positive matrix elements}. In other words, we would like to relate the inequalities given by Eq.~\eqref{eq: matrix maths - positive matrix elements} to a set of requirements on the matrix elements of $\mathbf{A}$. According to Eq.~\eqref{eq: definition of the asymmetry matrix},
+\begin{equation}
+    \label{eq: constraints on the asymmetry matrix}
+    \begin{pmatrix} A_{11}&A_{12}\\A_{21}&A_{22}\end{pmatrix}\begin{pmatrix} a&b\\c&d\end{pmatrix} = \begin{pmatrix} e&f\\g&h\end{pmatrix}.
+\end{equation}
+Recognising that the requirements of each element of $\mathbf{M}^l$ and $\mathbf{M}^t$ is the same, the full requirement as given by Eq.~\eqref{eq: matrix maths - positive matrix elements} will be satisfied if the following simpler relation is satisfied:
+\begin{equation}
+    \label{eq: simpler constraints on the asymmetry matrix}
+    \begin{pmatrix} A_{11}&A_{12}\\A_{21}&A_{22}\end{pmatrix}\begin{pmatrix} a\\c\end{pmatrix} = \begin{pmatrix} e\\g\end{pmatrix}.
+\end{equation}
+
+The question to be solved here is that for given values $A_{ij}$, do positive values of $a$ and $c$ exist such that
+\begin{align}
+    A_{11}a + A_{12}c &\geq 0\\
+    A_{21}a + A_{22}c &\geq 0?
+\end{align}
+Given that $a$ and $c$ must be positive, this can equally well be expressed as the requirements
+\begin{align}
+    A_{11}x + A_{12} &\geq 0\label{eq: reduced asymmetry constraint 1}\\
+    A_{21}x + A_{22} &\geq 0,\label{eq: reduced asymmetry constraint 2}
+\end{align}
+where $x = a/c$ is constrained to be nonnegative. Two constraints are immediately obvious from these two requirements: no nonnegative values of $x$ exist to satisfy Eqs.~\eqref{eq: reduced asymmetry constraint 1} and \eqref{eq: reduced asymmetry constraint 2} if either
+\begin{equation}
+    \label{eq: constraint 1}
+    A_{11} < 0\text{ and }A_{12} < 0,
+\end{equation}
+    or
+\begin{equation}
+    \label{eq: constraint 2}
+    A_{21} < 0\text{ and }A_{22} < 0.
+\end{equation}
+    
+Eqs.~\eqref{eq: reduced asymmetry constraint 1} and \eqref{eq: reduced asymmetry constraint 2} need to be simultaneously satisfied, and these requirements can be combined in a single condition. To do the combinations, different signs of the coefficients need to be considered separately. There are four cases to consider:
+\begin{enumerate}
+    \item $A_{11} \geq 0$ and $A_{21} \geq 0$;
+    \item $A_{11} \geq 0$ and $A_{21} < 0$;
+    \item $A_{11} < 0$ and $A_{21} \geq 0$;
+    \item $A_{11} < 0$ and $A_{21} < 0$.
+\end{enumerate}
+
+\subsection*{Case (i): $A_{11} \geq 0$ and $A_{21} \geq 0$}
+In this case Eqs.~\eqref{eq: reduced asymmetry constraint 1} and~\eqref{eq: reduced asymmetry constraint 2} can be written as
+\begin{align}
+    \frac{A_{12}}{A_{11}} \geq -x; \label{eq: case 1-1}\\
+    \frac{A_{22}}{A_{21}} \geq -x.\label{eq: case 1-2}
+\end{align}
+For any value of $x$ which is large enough ($x$ is only constrained to be nonnegative), these inequalities will be satisfied. So all values $A_{ij}$ are potentially physical in this case.
+
+\subsection*{Case (ii): $A_{11} \geq 0$ and $A_{21} < 0$}
+Because of constraint \eqref{eq: constraint 2}, $A_{22}$ must be positive. Now, Eqs.~\eqref{eq: reduced asymmetry constraint 1} and~\eqref{eq: reduced asymmetry constraint 2} become
+\begin{align}
+    x \geq - \frac{A_{12}}{A_{11}}; \label{eq: case 2-1} \\ 
+    x \leq - \frac{A_{22}}{A_{21}},\label{eq: case 2-2}
+\end{align}
+which can be combined to give
+\begin{align}
+    - \frac{A_{12}}{A_{11}} &\leq x \leq - \frac{A_{22}}{A_{21}},\\
+    - \frac{A_{12}}{A_{11}} &\leq - \frac{A_{22}}{A_{21}}.
+\end{align} 
+Multiplying through by $A_{11}A_{21}$ (which is negative) gives
+\begin{equation}
+    A_{11}A_{22} -A_{12}A_{21} \geq 0.
+\end{equation}
+
+\subsection*{Case (iii): $A_{11} < 0$ and $A_{21} \geq 0$}
+In this case, Eqs.~\eqref{eq: reduced asymmetry constraint 1} and~\eqref{eq: reduced asymmetry constraint 2} become
+\begin{align}
+    x \leq - \frac{A_{12}}{A_{11}}; \label{eq: case 3-1}\\
+    x \geq - \frac{A_{22}}{A_{21}},\label{eq: case 3-2}
+\end{align}
+and physical solutions could exist as long as
+\begin{equation}
+    A_{12}A_{21} -A_{11}A_{22} \geq 0.
+\end{equation}
+
+\subsection*{Case (iv): $A_{11} < 0$ and $A_{21} < 0$}
+Finally in this case,
+\begin{align}
+    \frac{A_{12}}{A_{11}} \ge - x; \label{eq: case 4-1}\\
+    \frac{A_{22}}{A_{21}} \geq -x. \label{eq: case 4-2}
+\end{align}
+By noting that conditions \eqref{eq: constraint 1} and \eqref{eq: constraint 2} imply that $A_{12} \geq 0$ and $A_{22} \geq 0$, and hence the two requirements found for this case can be satisfied by having any (positive) value of $x$ which is sufficiently close to zero.
+
+\subsection*{Summary of requirements}
+The constraints resulting from cases (i) and (iv) imply that the mixing matrix without negative elements exist for all cases where $A_{11}$ and $A_{21}$ have the same sign. The cases where they have opposite sign, cases (ii) and (iii), may be combined into one single requirement. In summary, together with Eqs.~\eqref{eq: reduced asymmetry constraint 1} and \eqref{eq: reduced asymmetry constraint 2}, this gives the following three requirements on $\mathbf{A}$ which all have to be met to allow physical solutions to exist:
+\begin{enumerate}
+    \item $A_{11}$ and $A_{12}$ are not both negative;
+    \item $A_{21}$ and $A_{22}$ are not both negative;
+    \item $(A_{11}A_{21} \geq 0) \lor (|A_{11}|A_{22} + A_{12}|A_{21}| \geq 0)$.
+\end{enumerate}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Method for constraining the mixing matrix \texorpdfstring{$\mathbf{M}$}{\textbf{M}} from the fitted matrix \texorpdfstring{$\mathbf{A}$}{\textbf{A}}}
+\label{app: matrix maths - posmatrix explanation}
+
+The fitted asymmetry matrix $\mathbf{A}$ is a degenerate combination of the underlying mixing matrix $\mathbf{M}$ for the two sides of $\phi_\mathrm{fid}$, $\mathbf{M}^l$ and $\mathbf{M}^t$ respectively (see Eq.~\eqref{eq: definition of the asymmetry matrix}). It is the mixing matrix which describes how the magnetosphere affects the intrinsic OPMs at a given pulse longitude, and therefore in order to obtain $\mathbf{I}$, $\mathbf{A}$ needs to be broken down into $\mathbf{M}$ for each pulse longitude.
+
+There are requirements that $\mathbf{M}$ must satisfy in order to be physical: specifically, all its elements must be greater than or equal to zero, as explained in Appendix \ref{app: matrix maths - physical constraints}. Given an asymmetry matrix, the mixing matrices found in the leading and trailing halves are related by $\mathbf{AM}^t=\mathbf{M}^l$. The two columns $j$ of $\mathbf{M}$ are independent, so they can be resolved simultaneously;
+\begin{equation}
+    \begin{pmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{pmatrix} \begin{pmatrix} M^t_{1j} \\ M^t_{2j} \end{pmatrix} = \begin{pmatrix} M^l_{1j} \\ M^l_{2j} \end{pmatrix},
+\end{equation}
+where all $M_{ij}\geq 0$. This is the same process as in Appendix \ref{app: matrix maths - physical constraints}: there are two equations to resolve;
+\begin{align}
+    A_{11}x + A_{12} \geq 0,\label{eq: reduced asymmetry constraint 1.2}\\
+    A_{21}x + A_{22} \geq 0,\label{eq: reduced asymmetry constraint 2.2}
+\end{align}
+where the goal is now to find what range of values $x$ can take, and that in turn describes the range of values that the elements of $\mathbf{M}^t$ can take. Once again we can consider different cases to define the range, between an upper and lower limit $x_\mathrm{min}$ and $x_\mathrm{max}$ respectively. The different cases and their resultant values of $x_\mathrm{min}$ and $x_\mathrm{max}$ are shown in  Tab.~\ref{tab: asymmetry constraint cases}.
+\begin{table}
+    \renewcommand{\arraystretch}{1.5}
+    \centering
+    \caption[Constraints on the asymmetry matrix used to determine the mixing matrix]{A summary of the four possible cases for Eqs.~\eqref{eq: reduced asymmetry constraint 1.2} and \eqref{eq: reduced asymmetry constraint 2.2} which depend on the signs of the matrix elements $A_{ij}$, and the limits each of these place on $x$.}
+    \label{tab: asymmetry constraint cases}
+    \begin{tabular}{cccc}
+        \hline
+        Case 							& Inequalities 									& $x_\mathrm{min}$ 							& $x_\mathrm{max}$ \\
+        \hline
+        $A_{11}\geq0$, $A_{21}\geq0$	& $x\geq-\frac{A_{12}}{A_{11}}$; $x\geq-\frac{A_{22}}{A_{21}}$	& max($-\frac{A_{12}}{A_{11}}$, $-\frac{A_{22}}{A_{21}}$)    & No maximum value                			\\
+        $A_{11}\geq0$, $A_{21}<0$    	& $x\geq-\frac{A_{12}}{A_{11}}$; $x\leq-\frac{A_{22}}{A_{21}}$	& $-A_{12}/A_{11}$	& $-A_{22}/A_{21}$                          \\
+        $A_{11}<0$, $A_{21}\geq0$    	& $x\leq-\frac{A_{12}}{A_{11}}$; $x\geq-\frac{A_{22}}{A_{21}}$ 	& $-A_{22}/A_{21}$	& $-A_{12}/A_{11}$                          \\
+        $A_{11}<0$, $A_{21}<0$       	& $x\leq-\frac{A_{12}}{A_{11}}$; $x\leq-\frac{A_{22}}{A_{21}}$  & 0	& min($-\frac{A_{12}}{A_{11}}$, $-\frac{A_{22}}{A_{21}}$)
+    \end{tabular}
+\end{table}
+We are free to scale a given column in $\mathbf{M}$ in any way, as long as the intrinsic OPMs are also scaled accordingly -- this is one of the degeneracies in this process as discussed in Sec.~\ref{sec: B0031 - methods - calculating intrinsic emission}. Therefore the choice is made to scale $x$ such that the quadrature sum of elements in a column is one, as a way of normalising the data. The scaled range between $\Tilde{x}_\mathrm{min}$ and $\Tilde{x}_\mathrm{max}$ becomes
+\begin{align}
+    \Tilde{x}_\mathrm{min} = \frac{x_\mathrm{min}}{\sqrt{x_\mathrm{min}^2 + 1}}\\
+    \Tilde{x}_\mathrm{max} = \frac{x_\mathrm{max}}{\sqrt{x_\mathrm{max}^2 + 1}}. 
+\end{align}
+The elements of the trailing half mixing matrix $\mathbf{M}^t$ are then set by
+\begin{align}
+    M_{11}^t &= \Tilde{x}_\mathrm{min} + \frac{l}{2}(\Tilde{x}_\mathrm{max} - \Tilde{x}_\mathrm{min})\label{eq: Mt11 level}\\
+    M_{21}^t &= \sqrt{1-(M_{11}^t)^2}\label{eq: Mt12 level}\\
+    M_{12}^t &= \Tilde{x}_\mathrm{min} + \bigg(1-\frac{l}{2}\bigg)(\Tilde{x}_\mathrm{max} - \Tilde{x}_\mathrm{min})\label{eq: Mt21 level}\\
+    M_{22}^t &= \sqrt{1-(M_{12}^t)^2}\label{eq: Mt22 level},
+\end{align}
+where $l$ is a `level parameter' between 0 and 1 which picks out a value in the linear range $\Tilde{x}_\mathrm{min} \leq \tilde{x} \leq \Tilde{x}_\mathrm{max}$. The trailing half mixing matrix can then be found from $\mathbf{M}^l=\mathbf{AM}^t$. In Eqs.~\eqref{eq: Mt11 level}--\eqref{eq: Mt22 level} the level parameter $l$ also has the effect of determining the similarity of the two columns of $\mathbf{M}^t$. Setting $l = 0$ means that the columns are as different as it is possible for them to be (given the range of $x$), such that 
+\begin{align}
+    M_{11}^t &= \Tilde{x}_\mathrm{min}\label{eq: Mt11 level l0}\\
+    M_{21}^t &= \sqrt{1-\Tilde{x}_\mathrm{min}^2}\label{eq: Mt12 level l0}\\
+    M_{12}^t &= \Tilde{x}_\mathrm{max}\label{eq: Mt21 level l0}\\
+    M_{22}^t &= \sqrt{1-\Tilde{x}_\mathrm{max}^2}\label{eq: Mt22 level l0}.
+\end{align}
+Conversely setting the $l = 1$ makes the two columns identical:  
+\begin{align}
+    M_{11}^t &\equiv M_{12}^t = \frac{\Tilde{x}_\mathrm{min} + \Tilde{x}_\mathrm{min}}{2}       \label{eq: Mt11 level l1}\\
+    M_{21}^t &\equiv M_{22}^t = \sqrt{1-\bigg(\frac{\Tilde{x}_\mathrm{min} + \Tilde{x}_\mathrm{min}}{2}\bigg)^2}.       \label{eq: Mt12 level l1}
+\end{align}
+
+In principle, the level parameter can also be extended to $l=2$, and Eqs.~\eqref{eq: Mt11 level}$-$\eqref{eq: Mt22 level} will still return values of $\tilde{x}$ in the correct range. However the results for $1 < l \leq 2$ are identical to the results for $0 \leq l < 1$ with the only difference being that the columns of $\mathbf{M}$ are swapped, which as discussed earlier is a degeneracy. Indeed, the level $l$ itself is a remaining degeneracy -- we make the choice to set $l=0$ universally, as this ensures that the intrinsic OPMs are as distinct as possible. Here it should also be noted that any linear combination of the obtained intrinsic OPMs can be taken as the `true' underlying OPMs (as discussed in Sec.~\ref{sec: B0031 - discuss - atlas - atlas plots evaluation}), but showing the most distinct solutions is useful to highlight the differences between them.
+
+When calculating the intrinsic OPMs it is necessary to invert the mixing matrix, as $\mathbf{I}=(\mathbf{M})^{-1}\mathbf{O}$. Small variations in the determinant of $\mathbf{M}$ from pulse longitude to pulse longitude can therefore lead to large variations in the intensity of $I_1$ and $I_2$ if it is close to zero. To avoid this, we again exploit the degeneracy of an overall scaling and normalise the mixing matrix at each pulse longitude independently, such that the quadrature sum of the determinants of corresponding pairs $\mathbf{M}^l$ and $\mathbf{M}^t$  is one, i.e.
+\begin{equation}
+    \widetilde{\mathbf{M}} = \frac{\mathbf{M}}{\sqrt{\det(\mathbf{M}^l)^2 + \det(\mathbf{M}^t)^2}}.
+\end{equation}
+This effective `renormalisation' ensures that the determinant of the mixing matrix is never too close to zero.
