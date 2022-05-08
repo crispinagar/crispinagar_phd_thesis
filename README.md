@@ -2,6 +2,8 @@
 
 This is the full source code (and a compiled PDF) of my PhD thesis, submitted in 2021. With some modifications, this was adapted from the template originally created by Dr Laura Driessen. Her "readme" notes are below.
 
+[A clean template of this thesis can be found here.](https://github.com/crispinagar/thesis-template)
+
 Crispin Agar, 2022-05-08
 
 
