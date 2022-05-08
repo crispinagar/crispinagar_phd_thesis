@@ -16,7 +16,7 @@ By using this template you are agreeing to check *yourself* whether it meets the
 
 Make sure you change everything that needs changing, like your name (must include the initial of your middle name), your supervisor's name, the colour scheme, the Declaration of Authorship, thesis title etc.
 
-The UoM guidelines require that any blank page has the words ``Blank page'' on it, so I made a command for that. If you'd like to insert a blank page that has ``Blank page'' smack bang in the middle, just use \UoMBlankPage
+The UoM guidelines require that any blank page has the words "Blank page" on it, so I made a command for that. If you'd like to insert a blank page that has "Blank page" smack bang in the middle, just use `\UoMBlankPage`
 
 The guidelines are also a bit weird about numbering, and font is important.
 
@@ -25,9 +25,11 @@ YOU WILL NEED TO CHANGE THE DECLARATION OF AUTHORSHIP PAGE! This is because the 
 Not all of the preamble pages are required. You don't have to have lists of symbols, physical constants, abbreviations, popular abstract, preface etc. Read the guidelines to check which ones can be removed and what order they have to be in.
 
 You can use fontspec to set up all the fonts, eg:
+```latex
 >>> \usepackage{fontspec}
 >>> \setmainfont{Bitstream Vera Sans}
-before \begin{document}, but then you need to go into your overleaf settings and change the LaTeX engine to XeLaTeX or LuaLaTeX. I have these lines commented out currently, and instead I'm using \usepackage{mathpazo} which is Palatino font.
+```
+before `\begin{document}`, but then you need to go into your overleaf settings and change the LaTeX engine to XeLaTeX or LuaLaTeX. I have these lines commented out currently, and instead I'm using `\usepackage{mathpazo}` which is Palatino font.
 
 And no, those are not the colours I used for my thesis template. I made them particularly garish so that you would choose your own colours (and there's no requirement for your thesis colours to be ugly or black and white, I checked! Colours are good!)! There are some great colour picking tools online, seriously good:
 https://www.canva.com/color-palette/
